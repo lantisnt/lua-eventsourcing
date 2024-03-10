@@ -177,7 +177,7 @@ local function handleAdvertiseMessage(message, sender, distribution, stateManage
             if requestWeekInhibitorCheck(listSync, week) then
                 listSync.logger:Info("Requesting data for week %s", week)
                 requestWeekInhibitorSet(listSync, week)
-                send(listSync, RequestWeekMessage.create(week), CHANNEL_GUILD)
+                send(listSync, RequestWeekMessage.create(week), distribution, sender)
             end
         end
     end
